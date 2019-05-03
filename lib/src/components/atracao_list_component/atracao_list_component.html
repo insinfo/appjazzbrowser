@@ -1,0 +1,56 @@
+<md-toast #toastElement></md-toast>
+<!--
+<ul class="attraction">
+    <li *ngFor="let atracao of atracoes"
+        [class.selected]="atracao === selected"
+        (click)="onSelect(atracao)">
+        <span class="badge">{{atracao.id}}</span> {{atracao.nome}}
+    </li>
+</ul>-->
+
+<!-- Basic datatable -->
+
+<div class="card">
+
+    <div class="card-header header-elements-inline">
+        <h5 class="card-title">Lista de Atrações</h5>
+        <div class="header-elements">
+            <div class="list-icons">
+                <button [routerLink]="RoutePaths.atracaoNew.toUrl()"  type="button" class="btn btn-primary legitRipple">Adicionar</button>
+                <button (click)="onDelete()" type="button" class="btn bg-pink-400 legitRipple">Deletar</button>
+            </div>
+        </div>
+    </div>
+    <hr style="margin:0;padding:0;">
+    <data-table #dataTable [data]="atracoes"
+                (rowClick)="onRowClick($event)"
+                (dataRequest)="onRequestData($event)">
+    </data-table>
+
+</div>
+
+
+
+<!-- /Basic datatable [hidden]="!edited"
+
+<div *ngIf="selected != null">
+    <div class="modal fade show"
+         tabindex="-1" style="display: block; padding-right: 17px;"
+
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="icon-menu7 mr-2">
+                    </i>Editar</h5>
+                    <button type="button" class="close" (click)="onSelect(null)">×</button>
+                </div>
+                <div class="modal-body">
+                    <atracao-form></atracao-form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>-->
+<!--  -->
